@@ -26,7 +26,11 @@ class Final():
         
     #Ethan
     def numerical_sum(self):
-        pass
+        print("Mean: " , self.df['Score_2017-19'].mean())
+        print("\nMedian : " , self.df['Score_2017-19'].median())
+        print("\nSTD: " , self.df['Score_2017-19'].std())
+        print("\nQuartiles: \n" , self.df['Score_2017-19'].quantile([0.25, 0.75], interpolation='nearest') , "\n")
+        
     #Lance
     def numstdev(self,data,number):
         set_size = len(data)
@@ -56,10 +60,8 @@ class Final():
         print("Percent within three standard deviation of mean :: ", self.numstdev(self.df["Score_2017-19"],3))
     #Ethan
     def hypothesis_tests(self):
-        pass
-    def ANOVA(self):
-        #if possible]
-        pass
+        print(sc.ttest_1samp(self.df['Score_2017-19'], 5, alternative="greater"))
+        
     #Lance
     def linear_regression(self):
         print("="*20)
@@ -86,5 +88,13 @@ class Final():
         print("Mean Absolute Error:: ",meanAbsError)
         print("Mean Square Error:: ",meanSqError)
         print("Root Mean Square error::",rootMeanSqError)
+        
+    def main(self):
+        self.numerical_sum()
+        self.hypothesis_tests()
+   
+if __name__ == '__main__':
+    final = Final()
+    final.main()
    
     
