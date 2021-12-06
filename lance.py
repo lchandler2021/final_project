@@ -93,8 +93,5 @@ class Final():
         self.numerical_sum()
         self.hypothesis_tests()
    
-if __name__ == '__main__':
-    final = Final()
-    final.main()
-   
+
     
